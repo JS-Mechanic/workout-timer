@@ -315,3 +315,4 @@ modules.xml
 *.ipr
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,node,react,webstorm+all,webstorm+iml
+.node_modules/*
