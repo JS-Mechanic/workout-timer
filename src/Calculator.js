@@ -1,4 +1,4 @@
-import {memo, useCallback, useEffect, useState} from 'react';
+import {memo, useEffect, useState} from 'react';
 import clickSound from './ClickSound.m4a';
 
 function Calculator({ workouts, allowSound }) {
@@ -40,7 +40,7 @@ function Calculator({ workouts, allowSound }) {
       <form>
         <div>
           <label>Type of workout</label>
-          <select value={number} onChange={(e) => setNumber(+e.target.value)}>
+          <select value={Number(number)} onChange={(e) => setNumber(+e.target.value)}>
             {workouts.map((workout) => (
               <option value={workout.numExercises} key={workout.name}>
                 {workout.name} ({workout.numExercises} exercises)
@@ -55,7 +55,7 @@ function Calculator({ workouts, allowSound }) {
             min='1'
             max='5'
             value={sets}
-            onChange={(e) => setSets(e.target.value)}
+            onChange={(e) => setSets(Number(e.target.value))}
           />
           <span>{sets}</span>
         </div>
@@ -67,7 +67,7 @@ function Calculator({ workouts, allowSound }) {
             max='180'
             step='30'
             value={speed}
-            onChange={(e) => setSpeed(e.target.value)}
+            onChange={(e) => setSpeed(Number(e.target.value))}
           />
           <span>{speed} sec/exercise</span>
         </div>
@@ -78,7 +78,7 @@ function Calculator({ workouts, allowSound }) {
             min='1'
             max='10'
             value={durationBreak}
-            onChange={(e) => setDurationBreak(e.target.value)}
+            onChange={(e) => setDurationBreak(Number(e.target.value))}
           />
           <span>{durationBreak} minutes/break</span>
         </div>
